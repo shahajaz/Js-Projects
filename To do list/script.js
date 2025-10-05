@@ -1,20 +1,18 @@
-const todoList = document.getElementById('todoList');
-const taskInput = document.getElementById('taskInput');
-const addTaskButton = document.getElementById('addTaskButton');
+let tasks = [];
 
-addTaskButton.addEventListener('click', addTodo);
-taskInput.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        addTodo();
-    }
-});
+const addTask = (task) => {
+    const taskInput = document.getElementById("taskInput");
+    const text = taskInput.value.trim();
 
-function addTodo() {
-    const taskText = taskInput.value.trim();
-    if (taskText === '') {
-        const li = document.createElement('li');
-        li.textContent = taskText;
-        todoList.appendChild(li);
-        taskInput.value = '';
+    if(text){
+        tasks.push({text:text, completed:false});
+        taskInput.value = "";
+        console.log(tasks);
     }
 }
+
+document.getElementById("newTask").addEventListener("click", function(event) {
+    event.preventDefault();
+    const taskInput = document.getElementById("taskInput");
+    const task = taskInput.value.trim();        
+});
