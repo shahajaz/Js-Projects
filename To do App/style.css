@@ -5,21 +5,27 @@
     font-family: 'uber', sans-serif;
 }
 body{
-    background: #608b81;
+    background: #20333b;
     align-items: center;
     justify-content: center;
+    display: flex;
 }
 .container{
+    width: 100%;
+    max-width: 550px;
+    max-height: 800px;
     display: flex;
-    position: relative;
-    margin-top: 10%;
     flex-direction: column;
+    margin-top: 60px;
+    padding: 20px 10px;
     align-items: center;
     justify-content: center;
+    border-radius: 12px;
+    background-color: #e0ffff;
 }
 .input-container{
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
     padding: 15px;
     background-color: #000000;
     border-radius: 12px;
@@ -44,7 +50,7 @@ body{
 .input-container input[type="text"]{
     width: 80%;
     height: 45px;
-    margin-left: 12px;
+    margin-left: 18px;
     border-radius: 50px;
 }
 .input-container input[type="button"]{
@@ -60,29 +66,51 @@ body{
     cursor: pointer;
 }
 .input-container input[type="button"]:hover{
-    color: #000000;
-    border: 2.5px solid #ff3a09;
-    background-color: #ffffff;
     transform: scale(1.1);  
 }
 ul{
     width: 100%;
-    max-width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    max-width: 450px;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* flex-direction: column; */
 }
 ul li{
     width: 100%;
+    height: 45px;
+    display: flex;
     padding: 15px;
     font-size: 20px;
     border-radius: 12px;
     margin-top: 15px;
     list-style: none;
+    color: #000000;
+    background-color: #ffffff;
+    border-radius: 50px;
+    border: 3px solid #000000;
     align-items: center;
-    color: black;
-    background-color: #8e8b8b;
     justify-content: space-between;
     cursor: pointer;
+}
+ul li p{
+    flex-grow: 1;
+    padding: 2px;
+}
+.btn{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.deleteBtn{
+    color: #ff3a09;
+}
+
+.editBtn{
+    color: #008000;
 }
