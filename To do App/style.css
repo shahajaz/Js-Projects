@@ -17,7 +17,7 @@ body{
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-    padding: 20px 10px;
+    padding: 20px;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
@@ -28,7 +28,7 @@ body{
     max-width: 500px;
     padding: 15px;
     background-color: #000000;
-    border-radius: 12px;
+    border-radius: 8px;
 }
 .input-container h1{
     color: #ffffff;
@@ -71,10 +71,6 @@ body{
 ul{
     width: 100%;
     max-width: 450px;
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* flex-direction: column; */
 }
 ul li{
     width: 100%;
@@ -112,5 +108,5 @@ ul li p{
 }
 
 .editBtn{
-    color: #008000;
+    color: #00ff00;
 }
