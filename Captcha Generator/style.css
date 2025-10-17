@@ -11,3 +11,7 @@ body{
     background: #a08f8fe1;
     font-family: 'Poppins', sans-serif;
 }
+.header{
+    display: flex;
+    
+}
