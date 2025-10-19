@@ -8,7 +8,34 @@
     <title>Credit Card</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="card">
+            <div class="front">
+                <div class="chip"></div>
+                <div class="card-number" id="card-number">#### #### #### ####</div>
+                <div class="card-holder">
+                    <label>Card Holder</label>
+                    <div id="card-holder-name">FULL NAME</div>
+                </div>
+                <div class="card-expiration">
+                    <label>Expires</label>
+                    <div id="card-expiration-date">MM/YY</div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="magnetic-strip"></div>
+                <div class="signature-box">
+                    <label>CVV</label>
+                    <div id="card-cvv">###</div>
+                </div>
+            </div>
+        </div>
+
+        <form class="card-form">
+            <div class="form-group">
+                <label for="input-card-number">Card Number</label>
+                <input type="text" id="input-card-number" maxlength="19" placeholder="#### #### #### ####">
+    </div>
 
     <script src="script.js"></script>
 </body>
