@@ -11,18 +11,38 @@
         <h1>Password Generator</h1>
 
         <div class="inputBox">
-            <input type="text" class="passBox" disabled>
+            <input type="text" class="passBox" id="passBox" disabled>
+            <!-- <span class="material-icons" id="copyIcon">content_copy</span> -->
         </div>
 
-        <input type="range" min="1" max="20" value="8" class="rangeBox">
+        <input type="range" min="1" max="20" value="8" class="rangeBox" id="rangeBox">
 
         <div class="passwordBox">
             <p>Password Length</p>
-            <span>8</span>
+            <span id="rangeValue"></span>
         </div>
 
-        <label for="lowercase">Include Lowercase Letter (a-z)</label>
-        <input type="checkbox" name="lowercase" id="lowercase">
+        <div class="pass-text">
+            <label for="lowercase">Include Lowercase Letter (a-z)</label>
+            <input type="checkbox" name="lowercase" id="lowercase">
+        </div>
+
+        <div class="pass-text">
+            <label for="uppercase">Include Uppercase Letter (A-Z)</label>
+            <input type="checkbox" name="uppercase" id="uppercase">
+        </div>
+
+        <div class="pass-text">
+            <label for="numbers">Include Numbers (0-9)</label>
+            <input type="checkbox" name="numbers" id="numbers">
+        </div>
+
+        <div class="pass-text">
+            <label for="symbols">Include Symbols (#-@)</label>
+            <input type="checkbox" name="symbols" id="symbols">
+        </div>
+
+        <button class="genBtn" type="Btn" id="genBtn">Generate Password</button>
 
     </div>
     
