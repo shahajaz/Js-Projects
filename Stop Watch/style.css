@@ -4,25 +4,55 @@
     box-sizing: border-box;
 }
 body{
-    background: #2d2929;
-}
-
-.stopwatch{
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: #8FBC8F;
 }
-
-.stopwatch{
+.container{
+    width: 450px;
+    height: 200px;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #B0C4DE;
+    border-radius: 12px;
+    border: 2.5px solid #000000;
 }
-
 .stopwatch{
+    width: 400px;
+    height: 100px;
     display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 38%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background-color: #000000;
 }
-
-.stopwatch{
-    display: flex;
-    flex-direction: column;
+.timeSpan{
+    font-size: 70px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.buttons{
+    margin-top: 25%;
+}
+.btn{
+    padding: 12px 20px;
+    margin-inline: 12px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    background: none;
+    background-color: var(--clr);
+    border: 2.5px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 3s ease;
+}
+.btn:hover{
+    transition: all 3s ease;
 }
