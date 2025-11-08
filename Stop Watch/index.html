@@ -7,21 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <div class="stopwatch">
-            <div class="timeSpan">00 : 00 : 00</div>
+        <h1 class="heading">Stop Watch</h1>
+        <div class="time">
+            <span class="hour">00</span>
+            <span class="colon">:</span>
+            <span class="minute">00</span>
+            <span class="colon">:</span>
+            <span class="second">00</span>
+            <span class="colon ms-colon">:</span>
+            <span class="millisecond">00</span>
         </div>
-    
-            <div class="buttons">
-                <button id="stopBtn" class="btn" style="--clr:red;">Stop</button>
-
-                <button id="startBtn" class="btn" style="--clr:#fff200;">Start</button>
-
-                <button id="resetBtn" class="btn" style="--clr:#0004ff;">Reset</button>
-            </div>
+        <div class="buttons">
+            <button class="start">Start</button>
+            <button class="stop">Stop</button>
+            <button class="reset">Reset</button>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
