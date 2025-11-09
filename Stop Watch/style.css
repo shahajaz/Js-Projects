@@ -21,10 +21,10 @@ body{
 .heading{
     padding: 5px 10px;
     font-size: 2rem;
-    color: #fff;
+    color: #000000;
     border-radius: 12px;
-    background-color: #627474;
-    border: 2px solid #9bc4c4;
+    background-color: #ffffff;
+    border: 3px solid #000000;
 }
 .time{
     font-size: 4.2rem;
@@ -47,6 +47,7 @@ body{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.start:hover{
-    background-color: #ff0000;
+.buttons button.start{
+    cursor: not-allowed;
+    opacity: 0.8;
 }
