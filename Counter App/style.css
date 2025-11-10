@@ -9,10 +9,10 @@ body{
     background: #000000;
 }
 .container{
-    width: 300px;
+    width: 400px;
     height: auto;
     margin-top: 15%;
-    /* display: block;  */
+    margin-left: 40%;
     background: #808000;
     padding: 15px 30px;
     border-radius: 10px;
@@ -28,6 +28,48 @@ body{
     font-size: 3rem;
     color: #ffffff;
 }
-.buttons{
+button{
+    width: 50px;
+    height: 40px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
+}
 
+.increaseBox{
+    display: inline-flex;
+    position: relative;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.changeBy{
+    width: 60px;
+    height: 40px;
+    margin: 0px 16px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 5px;
+    font-size: 1.2rem;
+}
+.resetBtn{
+    width: 80px;
+    height: 40px;
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #000000;
+    color: #ffffff;
 }
