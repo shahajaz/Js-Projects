@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1d1d;
+}
+.container{
+    width: 380px;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #05b0b0;
+}
+.heading{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 3px;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #000000;
+}
+form input{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #000000;
+    border-radius: 5px;
+}
+button{
+    width: 35%;
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.startGame:disabled{
+    cursor: not-allowed;
+}

@@ -7,7 +7,18 @@
     <title>Guess the Number</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="heading">Enter a number between 1 - 100</h1>
+        <form>
+            <input class="userInput" type="number" placeholder="Enter a number:" max="100" min="0"> 
+        
+            <button class="submitBtn">Submit</button>
+            <button class="startBtn" disabled>Start Game</button>
+        
+        </form>
+        <p class="result"></p>
+        <p class="all-guesses"></p>
+    </div>
 
     <script src="script.js" defer></script>
 </body>
