@@ -35,7 +35,7 @@ input{
     width: 100%;
     padding: 10px;
     margin-bottom: 5px;
-    border: 2px solid #312f2f;
+    border: 2.2px solid #312f2f;
     border-radius: 50px;
 }
 .transformed-text {
@@ -45,7 +45,7 @@ input{
     text-align: left;
     font-size: 20px;
     border-radius: 50px;
-    border: 2px solid #000000;
+    border: 2.3px solid #000000;
     background-color: #e5ddef;
 }
 .transformed-text label{
