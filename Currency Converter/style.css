@@ -4,44 +4,70 @@
     box-sizing: border-box;
 }
 body{
-    min-height: 70vh;
+    min-height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c0a6d9;
+    background-color: #10003d;
 }
 .container{
-    width: 350px;
-    height: 180px;
+    width: 320px;
+    height: 350px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 16px;
-    background: #76c2bf;
-    border: 2.5px solid #000;
+    background: #000;
+    border: 3px solid #ff3c00;
 }
-.heading{
+.header{
     font-size: 1.3rem;
+    font-weight: bold;
     text-align: center;
     padding: 3px;
     margin-bottom: 15px;
     color: #ffffff;
-    background: #000;
+    background: #ff3c00;
     border-radius: 50px;
 }
-.input-container{
-    border: 3px solid #000;
-    border-radius: 50px;
-    margin-block: 10px;
-    background: #ffffff;
+.container form{
+    margin: 25px;
 }
-.input-container input{
-    border: none;
+form :where(input, select, button){
+    width: 100%;
     outline: none;
-    width: 220px;
-    height: 30px;
-    background: #ffffff;
-    overflow: hidden;
+    border: none;
+    color: #ffffff;
+    /* padding: 10px; */
+    background: #2e2a3e;
 }
-.input-container:focus-within{
-    border-color: #ca1414;
+form p{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left;
+    color: #ffffff;
+}
+form input{
+    height: 30px;
+    width: 110%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: 2px solid #756d6d;
+}
+form input:focus{
+    padding: 0 14px;
+    background: #10003d;
+    border: 2px solid #ff3c00;
+}
+form .convert-list{
+    display: flex;
+    margin-top: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.select-box img{
+    width: 80px;
+    height: 80px;
 }
