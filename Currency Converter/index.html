@@ -8,42 +8,82 @@
     <title>Currency Converter Application</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">Currency Converter</div>
+    <!-- <div class="container"> -->
+        <!-- <div class="header">Currency Converter</div> -->
+<!--  -->
+        <!-- <form> -->
+            <!-- <div class="amount"> -->
+                <!-- <p>Enter Amount: </p> -->
+                <!-- <input type="text" value="1"> -->
+            <!-- </div> -->
+            <!-- <div class="convert-list"> -->
+                <!-- <div class="from"> -->
+                    <!-- <p>From</p> -->
+                    <!-- <div class="select-box"> -->
+                        <!-- <img src="/Currency Converter/img/uae.png" alt="UAE"> -->
+<!--  -->
+                        <!-- <select></select> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+<!--  -->
+                <!-- <div class="icon"> -->
+                    <!-- <i class="fa-solid fa-arrows-rotate"></i> -->
+                <!-- </div> -->
+<!--  -->
+                <!-- <div class="to"> -->
+                    <!-- <p>To</p> -->
+                    <!-- <div class="select-box"> -->
+                        <!-- <img src="/Currency Converter/img/us.png" alt="UAE"> -->
+<!--  -->
+                        <!-- <select></select> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            <!-- </div> -->
+<!--  -->
+            <!-- <div class="exchange-amount"> -->
+                <!-- <button>Exchange Amount</button> -->
+            <!-- </div> -->
+        <!-- </form> -->
+    <!-- </div> -->
 
+    <div class="wrapper">
+        <header>Currency Converter</header>
         <form>
             <div class="amount">
-                <p>Enter Amount: </p>
+                <p>Enter Amount</p>
                 <input type="text" value="1">
             </div>
-            <div class="convert-list">
+            <div class="drop-list">
                 <div class="from">
                     <p>From</p>
                     <div class="select-box">
-                        <img src="/Currency Converter/img/uae.png" alt="UAE">
-
-                        <select></select>
+                        <img src="https://flagcdn.com/48x36/us.png" alt="flag">
+                        <select>
+                            <!-- Options to select the currnecy to convert from -->
+                        </select>
                     </div>
                 </div>
-
                 <div class="icon">
-                    <i class="fa-solid fa-arrows-rotate"></i>
+                    <i class="fas fa-exchange-alt"></i>
                 </div>
 
                 <div class="to">
                     <p>To</p>
                     <div class="select-box">
-                        <img src="/Currency Converter/img/india.png" alt="UAE">
-
-                        <select></select>
+                        <img src="https://flagcdn.com/48x36/eu.png" alt="flag">
+                        <select>
+                            <!-- Options to select the currnecy to convert to -->
+                        </select>
                     </div>
                 </div>
             </div>
 
-            <div class="exchange-amount">
-                <button>Exchange Amount</button>
+            <div class="exchange-rate">
+                Getting Exchange rate...
             </div>
-        </form>
+            <button>Get Exchange Rate</button>
+
+    </div>
     </div>
 
     <script src="script.js"></script>
