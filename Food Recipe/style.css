@@ -135,6 +135,12 @@ li{
 .mobile-menu .btn:hover{
     color: var(--primary-text-color);
 }
+/* Home section started */
+.home-section{
+    min-height: calc(100vh - 14vh);
+}
+/* Home section ended */
+
 
 /* Responsive CSS for mobile devices started*/
 @media screen and (max-width: 780px){
