@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive E‑commerce Starter</title>
+  <meta name="description" content="Starter responsive e‑commerce template using HTML, CSS and JavaScript" />
+  <style>
+    /* ---------- Reset & base ---------- */
+    :root{
+      --primary:#0B66FF;
+      --muted:#667085;
+      --card-bg:#ffffff;
+      --surface:#f6f8fb;
+      --radius:12px;
+      --shadow: 0 6px 18px rgba(14,30,37,0.08);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color-scheme: light;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--surface);color:#0f1724;line-height:1.35}
+    a{color:inherit;text-decoration:none}
+
+    /* ---------- Layout ---------- */
+    .container{max-width:1200px;margin:28px auto;padding:0 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#6ea8ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:12px;align-items:center}
+    .search{flex:1;max-width:480px}
+    .search input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #e6e9ef;background:white}
+
+    /* ---------- Controls ---------- */
+    .controls{display:flex;gap:12px;align-items:center}
+    .icon-btn{background:white;border:none;padding:8px 10px;border-radius:10px;box-shadow:var(--shadow);cursor:pointer}
+    .cart-count{background:var(--primary);color:white;padding:3px 7px;border-radius:999px;font-size:13px;margin-left:6px}
+
+    /* ---------- Main grid ---------- */
+    main{display:flex;gap:24px;margin-top:22px}
+    .filters{width:220px}
+    .filters .card{position:sticky;top:20px}
+    .products{flex:1}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    .card{background:var(--card-bg);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+    .product{display:flex;flex-direction:column;gap:10px}
+    .product .media{height:190px;border-radius:8px;overflow:hidden;background:linear-gradient(180deg,#fff,#f3f7ff);display:flex;align-items:center;justify-content:center}
+    .product img{max-width:100%;max-height:100%;object-fit:contain}
+    .product h4{margin:0;font-size:15px}
+    .price-row{display:flex;justify-content:space-between;align-items:center}
+    .btn{background:var(--primary);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--primary);border:1px solid rgba(11,102,255,0.12)}
+
+    /* ---------- Cart sidebar ---------- */
+    .cart-drawer{position:fixed;right:20px;top:80px;width:360px;max-width:calc(100% - 40px);height:70vh;background:white;border-radius:12px;box-shadow:0 20px 40px rgba(2,6,23,0.15);overflow:auto;transform:translateX(120%);transition:transform .28s ease;z-index:60}
+    .cart-drawer.open{transform:translateX(0)}
+    .cart-items{display:flex;flex-direction:column;gap:12px;padding:12px}
+    .cart-item{display:flex;gap:12px;align-items:center}
+    .cart-item img{width:64px;height:64px;border-radius:8px;object-fit:cover}
+    .qty{display:inline-flex;align-items:center;gap:6px}
+    .muted{color:var(--muted);font-size:13px}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:1000px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .filters{display:none}
+      main{flex-direction:column}
+      .search{max-width:none}
+      .cart-drawer{right:10px;top:70px}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:repeat(1,1fr)}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .brand .title{font-size:16px}
+      .logo{width:36px;height:36px}
+      .cart-drawer{width:92%;right:4%;top:68px}
+    }
+
+    /* Small utilities */
+    .row{display:flex;align-items:center;gap:12px}
+    .center{display:flex;align-items:center;justify-content:center}
+    footer{margin:36px 0 80px;color:var(--muted);text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">E</div>
+        <div>
+          <div class="title" style="font-weight:700">Example Store</div>
+          <div class="muted" style="font-size:13px">Quality goods • Free delivery over ₹999</div>
+        </div>
+      </div>
+
+      <div class="search">
+        <input id="q" placeholder="Search products, e.g. 'sneakers'" aria-label="Search products">
+      </div>
+
+      <div class="controls">
+        <button class="icon-btn" id="view-favs" title="Wishlist">♡</button>
+        <button class="icon-btn" id="view-cart" aria-haspopup="dialog" aria-expanded="false">🛒 <span id="cart-count" class="cart-count">0</span></button>
+      </div>
+    </header>
+
+    <main>
+      <aside class="filters" aria-label="Product filters">
+        <div class="card">
+          <h3 style="margin-top:0">Filters</h3>
+          <label class="row" style="margin-top:8px"><input type="checkbox" class="category" value="all" checked> All</label>
+          <label class="row"><input type="checkbox" class="category" value="clothing"> Clothing</label>
+          <label class="row"><input type="checkbox" class="category" value="footwear"> Footwear</label>
+          <label class="row"><input type="checkbox" class="category" value="electronics"> Electronics</label>
+          <div style="margin-top:12px">
+            <label class="muted">Sort</label>
+            <select id="sort" style="width:100%;margin-top:6px;padding:8px;border-radius:8px;border:1px solid #e6e9ef;background:white">
+              <option value="popular">Most popular</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </aside>
+
+      <section class="products">
+        <div class="row" style="justify-content:space-between;align-items:end;margin-bottom:12px">
+          <h2 style="margin:0">Products</h2>
+          <div class="muted" id="result-count">0 items</div>
+        </div>
+
+        <div class="grid" id="product-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <div class="cart-drawer" id="cart-drawer" aria-hidden="true">
+      <div style="padding:12px;border-bottom:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:center">
+        <strong>Your cart</strong>
+        <button class="icon-btn" id="close-cart">✕</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div style="padding:12px;border-top:1px solid #eef2f7;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <div class="muted">Subtotal</div>
+          <div id="cart-subtotal" style="font-weight:700">₹0.00</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button class="btn" id="checkout">Checkout</button>
+          <button class="btn ghost" id="clear-cart">Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>Template: Responsive E‑commerce starter — build features like authentication, payments and admin panel next.</footer>
+  </div>
+
+  <script>
+    /* ---------- Sample products ---------- */
+    const PRODUCTS = [
+      {id:1,title:'Classic White Tee',price:499,category:'clothing',image:'https://picsum.photos/id/1005/600/400'},
+      {id:2,title:'Running Sneakers',price:3499,category:'footwear',image:'https://picsum.photos/id/1011/600/400'},
+      {id:3,title:'Wireless Headset',price:2499,category:'electronics',image:'https://picsum.photos/id/1040/600/400'},
+      {id:4,title:'Denim Jacket',price:1999,category:'clothing',image:'https://picsum.photos/id/1003/600/400'},
+      {id:5,title:'Casual Loafers',price:2199,category:'footwear',image:'https://picsum.photos/id/1027/600/400'},
+      {id:6,title:'Smart Watch',price:5999,category:'electronics',image:'https://picsum.photos/id/1060/600/400'}
+    ];
+
+    /* ---------- State & helpers ---------- */
+    const state = {cart:{}};
+    const $ = sel => document.querySelector(sel);
+    const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+    /* ---------- Render products ---------- */
+    function renderProducts(list){
+      const grid = $('#product-grid');
+      grid.innerHTML = '';
+      list.forEach(p => {
+        const card = document.createElement('article');
+        card.className = 'card product';
+        card.innerHTML = `
+          <div class="media"><img src="${p.image}" alt="${p.title}"></div>
+          <div>
+            <h4>${p.title}</h4>
+            <div class="muted">Category: ${p.category}</div>
+          </div>
+          <div class="price-row">
+            <div style="font-weight:700">₹${p.price.toLocaleString()}</div>
+            <div>
+              <button class="btn" data-id="${p.id}">Add</button>
+              <button class="btn ghost" data-id="${p.id}" title="Details">Details</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+      $('#result-count').textContent = `${list.length} items`;
+
+      // wire add buttons
+      grid.querySelectorAll('button[data-id]').forEach(btn => btn.addEventListener('click', e => {
+        const id = Number(e.currentTarget.dataset.id);
+        addToCart(id);
+      }));
+    }
+
+    /* ---------- Cart management ---------- */
+    function saveCart(){
+      localStorage.setItem('store_cart', JSON.stringify(state.cart));
+      updateCartUI();
+    }
+    function loadCart(){
+      const raw = localStorage.getItem('store_cart');
+      state.cart = raw ? JSON.parse(raw) : {};
+      updateCartUI();
+    }
+    function addToCart(id, qty=1){
+      state.cart[id] = (state.cart[id] || 0) + qty;
+      saveCart();
+      openCart();
+    }
+    function removeFromCart(id){
+      delete state.cart[id];
+      saveCart();
+    }
+    function setQty(id, qty){
+      if(qty<=0) removeFromCart(id);
+      else state.cart[id] = qty;
+      saveCart();
+    }
+
+    function cartItemsDetailed(){
+      return Object.entries(state.cart).map(([id,qty]) => {
+        const p = PRODUCTS.find(x=>x.id===Number(id));
+        return {...p, qty};
+      });
+    }
+
+    function cartSubtotal(){
+      return cartItemsDetailed().reduce((s,i)=>s + i.price*i.qty,0);
+    }
+
+    function updateCartUI(){
+      const count = Object.values(state.cart).reduce((s,n)=>s+n,0);
+      $('#cart-count').textContent = count;
+      $('#cart-subtotal').textContent = `₹${cartSubtotal().toLocaleString()}.00`;
+
+      const container = $('#cart-items');
+      container.innerHTML = '';
+      cartItemsDetailed().forEach(item => {
+        const el = document.createElement('div');
+        el.className = 'cart-item card';
+        el.style.padding='10px';
+        el.innerHTML = `
+          <img src="${item.image}" alt="${item.title}">
+          <div style="flex:1">
+            <div style="font-weight:700">${item.title}</div>
+            <div class="muted">₹${item.price.toLocaleString()}</div>
+            <div class="qty" style="margin-top:8px">
+              <button class="icon-btn" data-act="minus" data-id="${item.id}">-</button>
+              <div>${item.qty}</div>
+              <button class="icon-btn" data-act="plus" data-id="${item.id}">+</button>
+              <button class="icon-btn" data-act="remove" data-id="${item.id}" style="margin-left:8px">Remove</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(el);
+      });
+
+      // wire cart buttons
+      $$('#cart-items .icon-btn').forEach(btn => btn.addEventListener('click', e => {
+        const id = Number(e.currentTarget.dataset.id);
+        const act = e.currentTarget.dataset.act;
+        if(act==='plus') setQty(id, state.cart[id]+1);
+        if(act==='minus') setQty(id, state.cart[id]-1);
+        if(act==='remove') removeFromCart(id);
+      }));
+    }
+
+    /* ---------- UI helpers ---------- */
+    const cartDrawer = $('#cart-drawer');
+    function openCart(){
+      cartDrawer.classList.add('open');
+      cartDrawer.setAttribute('aria-hidden','false');
+      $('#view-cart').setAttribute('aria-expanded','true');
+    }
+    function closeCart(){
+      cartDrawer.classList.remove('open');
+      cartDrawer.setAttribute('aria-hidden','true');
+      $('#view-cart').setAttribute('aria-expanded','false');
+    }
+
+    /* ---------- Search & filter ---------- */
+    function getActiveCategories(){
+      const cboxes = Array.from(document.querySelectorAll('.category'));
+      const active = cboxes.filter(cb=>cb.checked).map(cb=>cb.value);
+      return active.includes('all') ? [] : active; // empty = all
+    }
+
+    function applyFilters(){
+      const q = $('#q').value.trim().toLowerCase();
+      const sort = $('#sort').value;
+      const cats = getActiveCategories();
+
+      let list = PRODUCTS.filter(p => {
+        if(cats.length && !cats.includes(p.category)) return false;
+        if(q && !(p.title.toLowerCase().includes(q) || p.category.toLowerCase().includes(q))) return false;
+        return true;
+      });
+
+      if(sort==='price-asc') list.sort((a,b)=>a.price-b.price);
+      if(sort==='price-desc') list.sort((a,b)=>b.price-a.price);
+
+      renderProducts(list);
+    }
+
+    /* ---------- Event wiring ---------- */
+    document.addEventListener('DOMContentLoaded', ()=>{
+      renderProducts(PRODUCTS);
+      loadCart();
+
+      $('#q').addEventListener('input', ()=> applyFilters());
+      $('#sort').addEventListener('change', ()=> applyFilters());
+      $$('.category').forEach(cb => cb.addEventListener('change', ()=>{
+        // if 'all' is toggled, clear others
+        if(cb.value==='all' && cb.checked){
+          $$('.category').forEach(x=> x.value!=='all' && (x.checked=false));
+        } else if(cb.value!=='all' && cb.checked){
+          // uncheck 'all'
+          $$('.category').find(x=>x.value==='all').checked = false;
+        }
+        applyFilters();
+      }));
+
+      $('#view-cart').addEventListener('click', openCart);
+      $('#close-cart').addEventListener('click', closeCart);
+      $('#clear-cart').addEventListener('click', ()=>{state.cart={};saveCart();});
+      $('#checkout').addEventListener('click', ()=>{
+        // very small mock for checkout - in real app, redirect to checkout + payment
+        if(Object.keys(state.cart).length===0){ alert('Cart is empty'); return; }
+        alert('Proceeding to checkout (mock). Subtotal: '+$('#cart-subtotal').textContent);
+      });
+    });
+  </script>
+</body>
+</html>

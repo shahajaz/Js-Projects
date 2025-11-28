@@ -96,7 +96,6 @@ li{
     border-radius: 50px;
     text-align: center;
     align-content: center;
-
 }
 .btn{
     display: inline-block;
@@ -196,6 +195,9 @@ li{
     font-size: 18px;
     border-radius: 50px;
     color: var(--primary-text-color);
+    background-color: var(--secondary-color);
+}
+.orderBtn:hover{
     background-color: var(--primary-color);
 }
 .viewBtn{
@@ -203,6 +205,9 @@ li{
     font-size: 18px;
     border-radius: 50px;
     color: var(--secondary-text-color);
+    background-color: var(--primary-color);
+}
+.viewBtn:hover{
     background-color: var(--secondary-color);
 }
 .social-icons{
@@ -220,6 +225,11 @@ li{
     color: var(--primary-text-color);
     border-radius: 50px;
     background-color: var(--primary-bg-color);
+    transition: all ease .3s;
+}
+.social-icons i:hover{
+    transform: scale(1.1);
+    background-color: #ff3700;
 }
 /* Home section ended */
 
@@ -258,6 +268,10 @@ li{
         transform: translateX(-50%);
         background: var(--secondary-bg-color);
         color: var(--primary-text-color);
+    }
+
+    .home-content{
+        padding: 3rem;
     }
 }
 /* Responsive CSS for mobile devices ended*/
