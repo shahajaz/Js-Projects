@@ -1,7 +1,7 @@
-const ham = document.querySelector('.header .nav-bar .ham');
+const hamburger = document.querySelector('.header .nav-bar .hamburger');
 const nav = document.querySelector('.header .nav-bar nav');
-ham.addEventListener('click', () => {
+hamburger.addEventListener('click', () => {
 	nav.classList.toggle('nav-toggle');
-	ham.classList.toggle('close');
+	hamburger.classList.toggle('close');
 });
-console.log(ham);
+console.log(hamburger);

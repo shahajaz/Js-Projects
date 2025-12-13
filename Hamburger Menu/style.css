@@ -83,29 +83,30 @@ html {
 }
 .header .nav-bar .nav-button .button {
 	display: inline-block;
-	padding: 25px 80px;
+	padding: 15px 25px;
 	background-color: rgb(144, 209, 187);
 	color: black;
 	text-decoration: none;
+	border-radius: 50px;
 }
 
 /* hamburger style */
 
-.header .nav-bar .ham {
+.header .nav-bar .hamburger{
 	display: inline-block;
 	cursor: pointer;
 	padding: 20px;
 	border: 1px solid black;
 }
-.header .nav-bar .ham .bar {
+.header .nav-bar .hamburger .hamburgerIcon{
 	height: 2px;
 	width: 20px;
 	background-color: black;
 	position: relative;
 	transition: .5s ease all;
 }
-.header .nav-bar .ham .bar::before,
-.header .nav-bar .ham .bar::after {
+.header .nav-bar .hamburger .hamburgerIcon::before,
+.header .nav-bar .hamburger .hamburgerIcon::after {
 	content: '';
 	position: absolute;
 	height: 2px;
@@ -113,25 +114,25 @@ html {
 	background-color: black;
 	transition: .5s ease all;
 }
-.header .nav-bar .ham .bar::before {
+.header .nav-bar .hamburger .hamburgerIcon::before {
 	top: -5px;
 	left: 0;
 }
-.header .nav-bar .ham .bar::after {
+.header .nav-bar .hamburger .hamburgerIcon::after {
 	bottom: -5px;
 	left: 0;
 }
-.header .nav-bar .ham.close .bar::before {
+.header .nav-bar .hamburger.close .hamburgerIcon::before {
 	top: 0px;
 	transform: rotate(45deg);
 	left: 0;
 }
-.header .nav-bar .ham.close .bar::after {
+.header .nav-bar .hamburger.close .hamburgerIcon::after {
 	top: 0px;
 	transform: rotate(-45deg);
 	left: 0;
 }
-.header .nav-bar .ham.close .bar {
+.header .nav-bar .hamburger.close .hamburgerIcon{
 	background-color: transparent;
 }
 
@@ -140,7 +141,7 @@ html {
 	.header .nav-bar {
 		width: auto;
 	}
-	.header .nav-bar nav {
+	.header .nav-bar nav{
 		position: initial;
 		transform: translate(0, 0);
 		height: auto;
@@ -148,8 +149,9 @@ html {
 		flex-direction: row;
 		background-color: transparent;
 		padding: 0;
+		z-index: 1;
 	}
-	.header .nav-bar nav .nav-list {
+	.header .nav-bar nav .nav-list{
 		display: flex;
 		flex-direction: row;
 		padding-bottom: 0;
@@ -165,7 +167,7 @@ html {
 		color: black;
 		font-size: 1.8rem;
 	}
-	.header .nav-bar .ham {
+	.header .nav-bar .hamburger{
 		display: none;
 	}
 }
