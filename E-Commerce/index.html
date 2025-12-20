@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>E - Commerce</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-
-  <nav class="navbar">
-    <div class="nav-container">
-
-      <!-- Logo -->
-      <div class="logo">CosmicShop</div>
-
-      <!-- Nav Links -->
-      <div class="nav-links" id="navLinks">
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-
-        <!-- Dropdown -->
-        <div class="dropdown">
-          <a href="#">Categories ▾</a>
-          <div class="dropdown-menu">
-            <a href="#">Electronics</a>
-            <a href="#">Fashion</a>
-            <a href="#">Accessories</a>
-          </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E - Commerce</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="/E-Commerce/img/logo.png" alt="logo">
         </div>
-        <a href="#">Contact Us</a>
-        <a href="#">About Us</a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#">Home</a>
+          <a href="#">Shop</a>
+
+          <!-- Dropdown -->
+          <div class="dropdown">
+            <a href="#">Categories ▾</a>
+            <div class="dropdown-menu">
+              <a href="#">Electronics</a>
+              <a href="#">Fashion</a>
+              <a href="#">Accessories</a>
+            </div>
+          </div>
+          <a href="#">Contact Us</a>
+          <a href="#">About Us</a>
+        </div>
+        
+        <!-- Cart Button -->
+        <button class="gradient-btn">🛒 Cart</button>
+        
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">☰</div>
       </div>
-
-      <!-- Cart Button -->
-      <button class="gradient-btn">🛒 Cart</button>
-
-      <!-- Hamburger -->
-      <div class="hamburger" id="hamburger">☰</div>
-
+    </nav>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="carousel">
+        <!-- Images -->
+        <div class="carousel-track">
+          <img src="/E-Commerce/img/bg1.png" class="slide active" />
+          <img src="/E-Commerce/img/bg2.png" class="slide" />
+          <img src="/E-Commerce/img/bg3.png" class="slide" />
     </div>
-  </nav>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Caption (STATIC) -->
+    <div class="hero-caption">
+      <h1>Explore the Future of Shopping</h1>
+      <p>
+        Premium products. Cosmic design.<br />
+        Experience e-commerce like never before.
+      </p>
+      <button class="gradient-btn">Shop Now</button>
+    </div>
+
+    <!-- Controls -->
+    <button class="control prev">&#10094;</button>
+    <button class="control next">&#10095;</button>
+
+    <!-- Indicators -->
+    <div class="indicators">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- HERO JS -->
+<script src="js/hero.js"></script>
+
 
   <!-- JS -->
   <script src="script.js"></script>
