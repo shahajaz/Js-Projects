@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Sign Up Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form-title">Login</h1>
+            <div class="form-message">Incorrect Username/password combination.</div>
+            <div class="formInput-grp">
+                <input type="text" class="form-input" placeholder="Username or email" autofocus>
+                <div class="formInput-error">This is an error message</div>
+            </div>
+
+            <div class="formInput-grp">
+                <input type="text" class="form-input" placeholder="password" autofocus>
+                <div class="formInput-error"></div>
+            </div>
+
+            <button class="form-btn" type="submit">Continue</button>
+
+            <p class="form-text">
+                <a href="#" class="form-link">Forget your password</a>
+            </p>
+
+            <p class="form-text">
+                <a href="./" id="createAccount" class="form-link">Don't have an account? Create account</a>
+            </p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
