@@ -8,24 +8,44 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #444864;
+    background: #000000d4;
+    font-family:'uber', sans-serif;
 }
 .container{
-    width: 350px;
-    padding: 15px;
-    border-radius: 8px;
-    background-color: #ffffffed;
-    box-shadow: 0 0 40px rgba(0, 0, 4px, 8px);
+    width: 100%;
+    height: 100vh;
+    position: relative;
 }
-.form-title{
-    font-size: 2rem;
-    padding: 8px;
+.form-box{
+    width: 90%;
+    max-width: 400px;
+    top: 40%;
+    left: 50%;
     text-align: center;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 8px;
+    background-color: #f6fbfff3;
+    border: 2px solid #00ffcc;
+    padding: 15px 25px;
+}
+.form-box h1{
+    font-size: 30px;
+    text-align: center;
+}
+.form-box h1::after{
+    content: '';
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    background: #00ffcc;
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translate(-50%);
 }
 
-.form-message{
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    color: #ff0000;
+.input-group{
+    padding: 10px;
 }
+
