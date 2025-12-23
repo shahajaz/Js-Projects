@@ -10,24 +10,29 @@
 <body>
     <div class="container">
         <div class="form-box">
-            <h1>Sign Up</h1>
+            <h1 id="title">Sign Up</h1>
             <form action="">
                 <div class="input-group">
-                    <div class="input-field">
+                    <div class="input-field" id="nameField">
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="name">
+                        <input type="text" placeholder="Name">
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="email">
+                        <input type="email" placeholder="Email">
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="password">
+                        <input type="password" placeholder="Password">
                     </div>
+                    <p>Forget password <a href="">Click Here!</a></p>
 
+                    <div class="btn-field">
+                        <button type="button" id="signupBtn">Sign Up</button>
+                        <button type="button" class="disable" id="signinBtn">Sign In</button>
+                    </div>
                 </div>
             </form>
         </div>

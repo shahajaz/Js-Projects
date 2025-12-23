@@ -8,7 +8,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #000000d4;
+    background: #0000007d;
     font-family:'uber', sans-serif;
 }
 .container{
@@ -18,34 +18,86 @@ body{
 }
 .form-box{
     width: 90%;
-    max-width: 400px;
-    top: 40%;
+    max-width: 350px;
+    top: 50%;
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
     position: absolute;
-    border-radius: 8px;
-    background-color: #f6fbfff3;
+    border-radius: 5px;
+    background-color: #ffffff;
     border: 2px solid #00ffcc;
     padding: 15px 25px;
 }
 .form-box h1{
+    margin: 10px 0;
     font-size: 30px;
     text-align: center;
 }
 .form-box h1::after{
     content: '';
-    width: 80px;
+    width: 100px;
     height: 5px;
     border-radius: 5px;
     background: #00ffcc;
     position: absolute;
-    bottom: 2px;
+    top: 65px;
     left: 50%;
     transform: translate(-50%);
 }
-
 .input-group{
-    padding: 10px;
+    height: 300px;
 }
-
+.input-field{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    height: 40px;
+    max-height: 65px;
+    border-radius: 50px;
+    background: #e1d5d5;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+.input-field i{
+    margin-left: 15px;
+    color: #56545499;
+}
+.input-field:active{
+    border: 2px solid #00ffcc;
+}
+input{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+    background: transparent;
+}
+form p{
+    text-align: left;
+    font-size: 13px;
+}
+form p a{
+    color: #00e1ff;
+}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-field button{
+    flex-basis: 35%;
+    height: 40px;
+    border: 0;
+    outline: 0;
+    margin: 15px 0;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: #00ffcc;
+    transition: background 1s;
+}
+.btn-field button.disable{
+    background: #e1d5d5;
+    color: #918f8f;
+}
