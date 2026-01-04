@@ -5,83 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E - Commerce</title>
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
   </head>
   <body>
-    
+
     <nav class="navbar">
       <div class="nav-container">
         <div class="logo">
           <img src="/E-Commerce/img/logo.png" alt="logo">
         </div>
-
+        
         <div class="nav-links" id="navLinks">
-          <a href="#">Home</a>
-          <a href="#">Shop</a>
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
 
-          <!-- Dropdown -->
           <div class="dropdown">
-            <a href="#">Categories ▾</a>
+            <a href="#categories">Categories</a>
             <div class="dropdown-menu">
-              <a href="#">Electronics</a>
+              <a href="">Electronics</a>
               <a href="#">Fashion</a>
               <a href="#">Accessories</a>
             </div>
           </div>
-          <a href="#">Contact Us</a>
-          <a href="#">About Us</a>
+          <a href="#contact">Contact Us</a>
+          <a href="#about">About Us</a>
         </div>
         
-        <!-- Cart Button -->
-        <button class="gradient-btn">🛒 Cart</button>
+        <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Cart</button>
         
-        <!-- Hamburger -->
         <div class="hamburger" id="hamburger">☰</div>
       </div>
     </nav>
     
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="carousel">
-        <!-- Images -->
         <div class="carousel-track">
           <img src="/E-Commerce/img/bg1.png" class="slide active" />
           <img src="/E-Commerce/img/bg2.png" class="slide" />
           <img src="/E-Commerce/img/bg3.png" class="slide" />
-    </div>
+        </div>
+        
+        <!-- Overlay -->
+        <div class="overlay"></div>
+        
+        <!-- Caption (STATIC) -->
+        <div class="hero-caption">
+          <h1>Explore the Future of Shopping</h1>
+          <p>
+            Premium products. Cosmic design.<br />
+            Experience e-commerce like never before.
+          </p>
+          
+          <div class="shopping-btn">
+            <button class="shop-btn">Shop Now</button>
+            <button class="explore-btn">Explore More</button>
+          </div>
+        </div>
+        
+        <!-- Controls -->
+        <button class="control prev">&#10094;</button>
+        <button class="control next">&#10095;</button>
+        
+        <!-- Indicators -->
+        <div class="indicators">
+          <span class="dot active" data-slide="0"></span>
+          <span class="dot" data-slide="1"></span>
+          <span class="dot" data-slide="2"></span>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section Ended -->
 
-    <!-- Overlay -->
-    <div class="overlay"></div>
-
-    <!-- Caption (STATIC) -->
-    <div class="hero-caption">
-      <h1>Explore the Future of Shopping</h1>
-      <p>
-        Premium products. Cosmic design.<br />
-        Experience e-commerce like never before.
-      </p>
-      <button class="gradient-btn">Shop Now</button>
-    </div>
-
-    <!-- Controls -->
-    <button class="control prev">&#10094;</button>
-    <button class="control next">&#10095;</button>
-
-    <!-- Indicators -->
-    <div class="indicators">
-      <span class="dot active" data-slide="0"></span>
-      <span class="dot" data-slide="1"></span>
-      <span class="dot" data-slide="2"></span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- HERO JS -->
-<script src="js/hero.js"></script>
 
 
-  <!-- JS -->
-  <script src="script.js"></script>
-</body>
+    <!-- Shopping Section Started --> 
+    <section class="shopping-section" id="shop">
+      <h2>Featured Products</h2>
+      <div class="product-card">
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+
+        <div class="product-items">
+          <img src="/E-Commerce/img/p1.jfif" alt="Product 1"/>
+          <h3>Smartphone X200</h3>
+          <p>$799.99</p>
+          
+          <div class="product-btn">
+            <button class="product-btn">Add to Cart</button>
+            <button class="product-btn">View Details</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shopping Section ended -->
+
+    <!-- Categories Section Started -->
+    <section class="categories-container" id="categories">
+      <h2>Shop by Categories</h2>
+      <div class="category-container">
+        <div class="category-card">
+          <img src="/E-Commerce/img/electronics.jpg" alt="Electronics"/>
+          <h3>Electronics</h3>
+        </div>
+
+        <div class="category-card">
+          <img src="/E-Commerce/img/fashion.jpg" alt="Fashion"/>
+          <h3>Fashion</h3>
+        </div>
+
+        <div class="category-card">
+          <img src="/E-Commerce/img/accessories.jpg" alt="Accessories"/>
+          <h3>Accessories</h3>
+        </div>
+
+        <div class="category-card">
+          <img src="/E-Commerce/img/home_appliances.jpg" alt="Home Appliances"/>
+          <h3>Home Appliances</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Categories Section ended --> 
+    
+    <script src="script.js"></script>
+  </body>
 </html>
